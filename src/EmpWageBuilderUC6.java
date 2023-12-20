@@ -10,7 +10,7 @@ public class EmpWageBuilderUC6 {
         int monthlywage=0;
         int totalemphrs=0;
         int totalworkdays=0;
-        while(totalemphrs<=max_hrs_month && totalworkdays<=working_days ){
+        while(totalemphrs<=max_hrs_month && totalworkdays<working_days ){
         int check=(int)Math.floor(Math.random()*10)%3;
         switch(check){
             case PART_TIME: 
@@ -23,7 +23,8 @@ public class EmpWageBuilderUC6 {
                 emphrs=0;
         }
         totalemphrs+=emphrs;
-        System.out.println("Day: "+ totalworkdays +"emp hrs:" +emphrs);
+        totalworkdays+=1;
+        System.out.println("Day: "+ totalworkdays + "  " +"emp hrs:" +emphrs);
     }
     monthlywage=totalemphrs*Wage_per_hour;
     System.out.println("Monthlywage: "+monthlywage);
